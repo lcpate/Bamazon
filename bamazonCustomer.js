@@ -45,7 +45,7 @@ function start() {
 function buyItem() {
   inquirer.prompt([
   {
-      name: "buying",
+      name: "id",
       type: "input",
       message: "What is the ID of the item that you would like to buy?",
       validate: function(value) {
@@ -58,7 +58,7 @@ function buyItem() {
             }
       }
     },{
-      name: "quantity",
+      name: "stock_quantity",
       type: "input",
       message: "How many would you like to buy?",
       validate: function(value){
@@ -73,9 +73,11 @@ function buyItem() {
     ])
     .then(function(answer) {
         var Item = parseInt(answer.stock_quantity);
+
             //Queries the database
             connection.query("SELECT * FROM products WHERE ?", {id: answer.id}, function(err, data) { 
               if (err) throw err;
+              console.log(data);
               //Checks if sufficient quantity exists
               if (data[0].stock_quantity < Item) {
                 console.log("We're sorry, that item is currently out of stock\n");
