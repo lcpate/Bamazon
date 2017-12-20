@@ -8,4 +8,12 @@ Bamazon is a node application that is a simple e-commerce platform similar to Am
 The Bamazon Customer Portal allows users to view the current items available for purchase. The user will be prompted to enter the item id# and how many items they wish to purchase. If the item is in stock, the order will be completed and the user will see the total amount of their purchase.
 
 
+The image below shows the Bamazon Customer Portal.
+
 ![Bamazon](/images/bamazonUse.png)
+
+
+
+The below image shows the updated inventory 
+
+![Bamazon](/images/updatedtable.png)
